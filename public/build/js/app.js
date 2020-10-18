@@ -6,7 +6,7 @@ for (var i = 0; i < urlReferrer.length; i++) {
     urlReferrerParsed[exploded[0]] = exploded[1];
 }
 
-var link = document.referrer || urlReferrerParsed.referrer;
+var link = urlReferrerParsed.referrer || document.referrer;
 
 if (link) {
     var referrerLink = document.getElementById('referrer-link');
