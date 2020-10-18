@@ -1,0 +1,23 @@
+{
+  "name": "NotSupported",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "postcss css/tailwind.css -o public/build/css/app.css",
+    "prod": "cross-env NODE_ENV=production postcss css/tailwind.css -o public/build/css/app.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^9.0.0",
+    "postcss-cli": "^8.1.0",
+    "tailwindcss": "^1.9.4"
+  },
+  "dependencies": {
+    "cssnano": "^4.1.10"
+  }
+}
