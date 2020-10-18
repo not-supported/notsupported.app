@@ -7,3 +7,5 @@ Whenever you detect a user with an outdated browser you have the following optio
 2. Redirect to the url with a referrer `https://notsupported.app/?referrer=https://github.com`
 3. Show a non-functional website :weary: 
 
+## Demo
+Visit https://notsupported.app or https://notsupported.app/?referrer=https://github.com
