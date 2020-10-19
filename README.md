@@ -9,3 +9,7 @@ Whenever you detect a user with an outdated browser you have the following optio
 
 ## Demo
 Visit https://notsupported.app **directly** or https://notsupported.app/?referrer=https://github.com
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
