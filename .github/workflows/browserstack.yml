@@ -16,6 +16,14 @@ jobs:
       - name: Visual Tests
         uses: percy/exec-action@v0.1.1
         with:
-          command: "node tests/snapshots.js"
+          command: "node tests/visual.js"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+      - name: Cross-Browser Tests
+        run: "node tests/tests.js"
+        env:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          branchName: ${GITHUB_REF##*/}
+          browserstackUsername: ${{ secrets.BROWSERSTACK_USERNAME }}
+          browserstackAutomateKey: ${{ secrets.BROWSERSTACK_AUTOMATE_KEY }}
