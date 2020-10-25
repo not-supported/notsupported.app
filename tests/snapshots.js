@@ -12,7 +12,7 @@ PercyScript.run(async (page, percySnapshot) => {
     console.log(`Server started at ${TEST_URL}`);
 
     await page.goto(TEST_URL);
-    await percySnapshot('TodoMVC with a new todo', {widths: [768, 992, 1200]});
+    await percySnapshot('Homepage', {widths: [768, 992, 1200]});
 
     server.close();
 });

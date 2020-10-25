@@ -16,6 +16,6 @@ jobs:
       - name: Visual Tests
         uses: percy/exec-action@v0.1.1
         with:
-          command: "percy exec -- node tests/snapshots.js"
+          command: "node tests/snapshots.js"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
