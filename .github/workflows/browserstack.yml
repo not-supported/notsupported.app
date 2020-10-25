@@ -11,17 +11,17 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          npm install -D @percy/script
-
-      - name: Visual Tests
-        uses: percy/exec-action@v0.1.1
-        with:
-          command: "node tests/visual.js"
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+#          npm install -D @percy/script
+#
+#      - name: Visual Tests
+#        uses: percy/exec-action@v0.1.1
+#        with:
+#          command: "node tests/visual.js"
+#        env:
+#          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Cross-Browser Tests
-        run: "node tests/snapshots.js"
+        run: "node --experimental-modules tests/snapshots.js"
         env:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           branchName: ${GITHUB_REF##*/}
