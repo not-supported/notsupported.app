@@ -21,7 +21,7 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Cross-Browser Tests
-        run: "node tests/tests.js"
+        run: "node tests/snapshots.js"
         env:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           branchName: ${GITHUB_REF##*/}

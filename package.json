@@ -16,7 +16,6 @@
     "@actions/github": "^4.0.0",
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "autoprefixer": "^9.0.0",
-    "esm": "^3.2.25",
     "http-server": "^0.12.3",
     "postcss-cli": "^8.1.0",
     "tailwindcss": "^1.9.4"
