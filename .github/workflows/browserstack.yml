@@ -21,9 +21,17 @@ jobs:
 #          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Cross-Browser Tests
-        run: "node --experimental-modules tests/snapshots.js"
         env:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.GH_TOKEN }}
           branchName: ${GITHUB_REF##*/}
-          browserstackUsername: ${{ secrets.BROWSERSTACK_USERNAME }}
-          browserstackAutomateKey: ${{ secrets.BROWSERSTACK_AUTOMATE_KEY }}
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_AUTOMATE_KEY: ${{ secrets.BROWSERSTACK_AUTOMATE_KEY }}
+        run: |
+          node tests/tests.js "$BROWSERSTACK_USERNAME" "$BROWSERSTACK_AUTOMATE_KEY"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Screenshots
+          path: ./screenshots
