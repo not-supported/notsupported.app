@@ -2,7 +2,7 @@ const PercyScript = require('@percy/script');
 const httpServer = require('http-server');
 
 const PORT = 8000; // process.env.PORT_NUMBER || 8000;
-const TEST_URL = `http://localhost:${PORT}`;
+const TEST_URL = `http://localhost:${PORT}/build`;
 
 // A script to navigate our app and take snapshots with Percy.
 PercyScript.run(async (page, percySnapshot) => {
